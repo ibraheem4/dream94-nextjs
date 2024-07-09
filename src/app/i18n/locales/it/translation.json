@@ -1,0 +1,33 @@
+{
+  "h1": "Un esempio semplice",
+  "title": "Home",
+  "to-client-page": "Alla pagina client",
+  "to-second-page": "Alla seconda pagina",
+  "welcome": "Benvenuto in Next.js 13/14 <1>con le nuove funzionalità della directory dell'app</1> e i18next",
+  "blog": {
+    "text": "Consulta il corrispondente <1>post sul blog</1> che descrive questo esempio.",
+    "link": "https://locize.com/blog/next-app-dir-i18n/"
+  },
+  "get-started": "Inizia modificando",
+  "by": "Di",
+  "docs": {
+    "title": "Documentazione",
+    "description": "Trova informazioni dettagliate sulle funzionalità e l'API di Next.js.",
+    "link": "https://nextjs.org/docs"
+  },
+  "learn": {
+    "title": "Impara",
+    "description": "Impara Next.js in un corso interattivo con quiz!",
+    "link": "https://nextjs.org/learn"
+  },
+  "templates": {
+    "title": "Modelli",
+    "description": "Esplora i modelli di partenza per Next.js.",
+    "link": "https://vercel.com/templates?framework=next.js"
+  },
+  "deploy": {
+    "title": "Distribuisci",
+    "description": "Distribuisci istantaneamente il tuo sito Next.js su un URL condivisibile con Vercel.",
+    "link": "https://vercel.com/new"
+  }
+}
