@@ -1,0 +1,33 @@
+{
+  "h1": "مثال بسيط",
+  "title": "الصفحة الرئيسية",
+  "to-client-page": "إلى صفحة العميل",
+  "to-second-page": "إلى الصفحة الثانية",
+  "welcome": "مرحبًا بك في Next.js 13/14 <1>مع ميزات دليل التطبيق الجديدة</1> و i18next",
+  "blog": {
+    "text": "اطلع على <1>المدونة</1> المقابلة التي تصف هذا المثال.",
+    "link": "https://locize.com/blog/next-app-dir-i18n/"
+  },
+  "get-started": "ابدأ بالتعديل",
+  "by": "بواسطة",
+  "docs": {
+    "title": "المستندات",
+    "description": "اعثر على معلومات متعمقة حول ميزات API وNext.js.",
+    "link": "https://nextjs.org/docs"
+  },
+  "learn": {
+    "title": "تعلم",
+    "description": "تعلم حول Next.js في دورة تفاعلية مع اختبارات!",
+    "link": "https://nextjs.org/learn"
+  },
+  "templates": {
+    "title": "القوالب",
+    "description": "استكشف قوالب البداية لـ Next.js.",
+    "link": "https://vercel.com/templates?framework=next.js"
+  },
+  "deploy": {
+    "title": "النشر",
+    "description": "انشر موقع Next.js الخاص بك على الفور إلى عنوان URL قابل للمشاركة مع Vercel.",
+    "link": "https://vercel.com/new"
+  }
+}

@@ -10,7 +10,6 @@ interface Resources {
   };
   footer: {
     description: string;
-    helpLocize: string;
     languageSwitcher: string;
   };
   "second-client-page": {

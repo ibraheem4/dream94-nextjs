@@ -1,46 +1,44 @@
-import { i18n } from 'i18next'
-import Link from 'next/link'
-import { Trans } from 'react-i18next/TransWithoutContext'
-import { languages } from '../../../i18n/settings'
+import { i18n } from "i18next";
+import Link from "next/link";
+import { Trans } from "react-i18next/TransWithoutContext";
+import { languages, fallbackLng } from "../../../i18n/settings";
 
-export const FooterBase = ({ i18n, lng, path = '' }: { i18n: i18n, lng: string, path?: string }) => {
-  const t = i18n.getFixedT(lng, 'footer')
+export const FooterBase = ({
+  i18n,
+  lng,
+  path = "",
+}: {
+  i18n: i18n;
+  lng: string;
+  path?: string;
+}) => {
+  const t = i18n.getFixedT(lng, "footer");
+
+  const getLinkPath = (l: string) => {
+    if (l === fallbackLng) {
+      return path === "" ? "/" : `${path}`;
+    } else {
+      return `/${l}${path}`;
+    }
+  };
+
   return (
     <footer>
       <Trans i18nKey="languageSwitcher" t={t}>
         {/* @ts-expect-error Trans interpolation */}
-        Switch from <strong>{{lng}}</strong> to:{' '}
+        Switch from <strong>{{ lng }}</strong> to:{" "}
       </Trans>
-      {languages.filter((l) => lng !== l).map((l, index) => {
-        return (
+      {languages
+        .filter((l) => lng !== l)
+        .map((l, index) => (
           <span key={l}>
-            {index > 0 && (' or ')}
-            <Link href={`/${l}${path}`}>
+            {index > 0 && " or "}
+            <Link href={getLinkPath(l)} locale={false}>
               {l}
             </Link>
           </span>
-        )
-      })}
-      <p>{t('description')}</p>
-      <p
-        style={{
-          fontSize: 'smaller',
-          fontStyle: 'italic',
-          marginTop: 20,
-        }}
-      >
-        <Trans i18nKey="helpLocize" t={t}>
-          With using 
-          <a href="https://locize.com" target="_new">
-            locize
-          </a>
-          you directly support the future of
-          <a href="https://www.i18next.com" target="_new">
-            i18next
-          </a>
-          .
-        </Trans>
-      </p>
+        ))}
+      <p>{t("description")}</p>
     </footer>
-  )
-}
+  );
+};
