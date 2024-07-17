@@ -1,10 +1,10 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from 'next/server';
 
-export async function GET(req: NextRequest): Promise<NextResponse> {
-  return new NextResponse(JSON.stringify({ status: "ok" }), {
+export async function GET(): Promise<NextResponse> {
+  return new NextResponse(JSON.stringify({ status: 'ok' }), {
     status: 200,
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
   });
 }

@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { useTranslation } from "../../i18n";
-import { Footer } from "../components/Footer";
+import Link from 'next/link';
+import { useTranslation } from '../../i18n';
+import { Footer } from '../components/Footer';
 
 export default async function Page({
   params: { lng },
@@ -9,12 +9,12 @@ export default async function Page({
     lng: string;
   };
 }) {
-  const { t } = await useTranslation(lng, "second-page");
+  const { t } = await useTranslation(lng, 'second-page');
   return (
     <>
       <main>
         <Link href={`/${lng}`}>
-          <button type="button">{t("back-to-home")}</button>
+          <button type="button">{t('back-to-home')}</button>
         </Link>
       </main>
       <Footer lng={lng} path="/second-page" />

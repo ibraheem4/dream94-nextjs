@@ -1,9 +1,11 @@
-const fs = require("fs");
-const path = require("path");
-const jsonSchemaToTypescript = require("json-schema-to-typescript");
+/* eslint-disable @typescript-eslint/no-var-requires */
+const fs = require('fs');
+const path = require('path');
+const jsonSchemaToTypescript = require('json-schema-to-typescript');
+/* eslint-enable @typescript-eslint/no-var-requires */
 
-const localesDir = path.join(__dirname, "src", "app", "i18n", "locales");
-const typesDir = path.join(__dirname, "src", "types");
+const localesDir = path.join(__dirname, 'src', 'app', 'i18n', 'locales');
+const typesDir = path.join(__dirname, 'src', 'types');
 
 // Ensure the types directory exists
 if (!fs.existsSync(typesDir)) {
@@ -18,26 +20,26 @@ const generateTypes = async () => {
       const translationFilePath = path.join(
         localesDir,
         lang,
-        "translation.json"
+        'translation.json',
       );
       if (!fs.existsSync(translationFilePath)) {
         console.error(`Translation file not found for language: ${lang}`);
         continue;
       }
 
-      const schema = JSON.parse(fs.readFileSync(translationFilePath, "utf8"));
+      const schema = JSON.parse(fs.readFileSync(translationFilePath, 'utf8'));
 
       const types = await jsonSchemaToTypescript.compile(
         schema,
-        `${lang}Translation`
+        `${lang}Translation`,
       );
 
       fs.writeFileSync(path.join(typesDir, `${lang}Translation.d.ts`), types);
     }
 
-    console.log("Types generated successfully");
+    console.log('Types generated successfully');
   } catch (error) {
-    console.error("Error generating types:", error);
+    console.error('Error generating types:', error);
   }
 };
 

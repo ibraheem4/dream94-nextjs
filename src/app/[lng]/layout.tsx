@@ -1,8 +1,8 @@
-import "./global.css";
+import './global.css';
 
-import { dir } from "i18next";
-import { languages, fallbackLng } from "../i18n/settings";
-import { useTranslation } from "../i18n";
+import { dir } from 'i18next';
+import { languages, fallbackLng } from '../i18n/settings';
+import { useTranslation } from '../i18n';
 
 export async function generateStaticParams() {
   return languages.map((lng) => ({ lng }));
@@ -19,9 +19,9 @@ export async function generateMetadata({
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { t } = await useTranslation(lng);
   return {
-    title: t("title"),
+    title: t('title'),
     content:
-      "A playground to explore new Next.js 14 app directory features such as nested layouts, instant loading states, streaming, and component level data fetching.",
+      'A playground to explore new Next.js 14 app directory features such as nested layouts, instant loading states, streaming, and component level data fetching.',
   };
 }
 

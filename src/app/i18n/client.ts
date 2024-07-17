@@ -1,20 +1,20 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import i18next, { FlatNamespace, KeyPrefix } from "i18next";
+import { useEffect, useState } from 'react';
+import i18next, { FlatNamespace, KeyPrefix } from 'i18next';
 import {
   initReactI18next,
   useTranslation as useTranslationOrg,
   UseTranslationOptions,
   UseTranslationResponse,
   FallbackNs,
-} from "react-i18next";
-import { useCookies } from "react-cookie";
-import resourcesToBackend from "i18next-resources-to-backend";
-import LanguageDetector from "i18next-browser-languagedetector";
-import { getOptions, languages, cookieName } from "./settings";
+} from 'react-i18next';
+import { useCookies } from 'react-cookie';
+import resourcesToBackend from 'i18next-resources-to-backend';
+import LanguageDetector from 'i18next-browser-languagedetector';
+import { getOptions, languages, cookieName } from './settings';
 
-const runsOnServerSide = typeof window === "undefined";
+const runsOnServerSide = typeof window === 'undefined';
 
 // on client side the normal singleton is ok
 i18next
@@ -23,14 +23,14 @@ i18next
   .use(
     resourcesToBackend(
       (language: string, namespace: string) =>
-        import(`./locales/${language}/${namespace}.json`)
-    )
+        import(`./locales/${language}/${namespace}.json`),
+    ),
   )
   .init({
     ...getOptions(),
     lng: undefined, // let detect the language on client side
     detection: {
-      order: ["path", "htmlTag", "cookie", "navigator"],
+      order: ['path', 'htmlTag', 'cookie', 'navigator'],
     },
     preload: runsOnServerSide ? languages : [],
   });
@@ -41,7 +41,7 @@ export function useTranslation<
 >(
   lng: string,
   ns?: Ns,
-  options?: UseTranslationOptions<KPrefix>
+  options?: UseTranslationOptions<KPrefix>,
 ): UseTranslationResponse<FallbackNs<Ns>, KPrefix> {
   const [cookies, setCookie] = useCookies([cookieName]);
   const ret = useTranslationOrg(ns, options);
@@ -64,7 +64,7 @@ export function useTranslation<
     // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
       if (cookies.i18next === lng) return;
-      setCookie(cookieName, lng, { path: "/" });
+      setCookie(cookieName, lng, { path: '/' });
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [lng, cookies.i18next]);
   }

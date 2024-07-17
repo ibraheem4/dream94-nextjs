@@ -1,38 +1,38 @@
 interface Resources {
-  "client-page": {
-    "back-to-home": string;
+  'client-page': {
+    'back-to-home': string;
     counter_one: string;
     counter_other: string;
     counter_zero: string;
     h1: string;
     title: string;
-    "to-second-client-page": string;
+    'to-second-client-page': string;
   };
   footer: {
     description: string;
     languageSwitcher: string;
   };
-  "second-client-page": {
-    "back-to-home": string;
+  'second-client-page': {
+    'back-to-home': string;
     h1: string;
     title: string;
   };
-  "second-page": {
-    "back-to-home": string;
+  'second-page': {
+    'back-to-home': string;
     h1: string;
     title: string;
   };
   translation: {
     h1: string;
     title: string;
-    "to-client-page": string;
-    "to-second-page": string;
+    'to-client-page': string;
+    'to-second-page': string;
     welcome: string;
     blog: {
       text: string;
       link: string;
     };
-    "get-started": string;
+    'get-started': string;
     by: string;
     docs: {
       title: string;
