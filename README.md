@@ -1,5 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+![CI/CD Pipeline](https://github.com/ibraheem4/dream94-nextjs/actions/workflows/deploy.yml/badge.svg)
+
 ## Getting Started
 
 First, run the development server:
