@@ -17,7 +17,7 @@ function parseSettings() {
   const settingsContent = fs.readFileSync(settingsPath, 'utf8');
 
   const languagesMatch = settingsContent.match(
-    /export const languages\s*=\s*(\[.*?\])/s,
+    /export const languages\s*=\s*(\[[\s\S]*?\])/,
   );
   const fallbackLngMatch = settingsContent.match(
     /export const fallbackLng\s*=\s*['"](.+?)['"]/,
@@ -32,7 +32,7 @@ function parseSettings() {
     .replace(/[[\]]/g, '')
     .split(',')
     .map((lang) => lang.trim().replace(/['"]/g, ''))
-    .filter((lang) => lang !== 'fallbackLng'); // Remove 'fallbackLng' if present
+    .filter((lang) => lang !== 'fallbackLng' && lang !== ''); // Remove 'fallbackLng' and empty strings if present
 
   const fallbackLng = fallbackLngMatch[1];
 

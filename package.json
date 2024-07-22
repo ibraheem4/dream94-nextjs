@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "generate-types": "node generate-types.js",
+    "generate-types": "node scripts/generate-types.js",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
