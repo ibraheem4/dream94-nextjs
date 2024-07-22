@@ -124,7 +124,13 @@ export async function GET() {
     });
   } catch (error) {
     console.error('Error generating sitemap:', error);
-    return new NextResponse(`Error generating sitemap: ${error.message}`, {
+
+    let errorMessage = 'An unexpected error occurred';
+    if (error instanceof Error) {
+      errorMessage = error.message;
+    }
+
+    return new NextResponse(`Error generating sitemap: ${errorMessage}`, {
       status: 500,
     });
   }
